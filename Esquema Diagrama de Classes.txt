@@ -1,0 +1,8 @@
+ENDERECO: logradouro, numero, bairro, cep, cidade, estado
+PESSOA 1-1 ENDERECO 1-1..* TELEFONE: nome, endereco, telefone(s)
+GERENTE extends PESSOA	-> registrar/consultar/atualizar/removerCliente(), registrar/alterar/excluir/consultarLoja(), cadastrarPedidoLavagem(), registrarDevolucaoPedido()
+CLIENTE extends PESSOA
+LOJA 1-1 GERENTE, 1-1..* TELEFONE
+ATENDENTE 1..*-1 LOJA, EXTENDS PESSOAS-> registrar/alterar/excluir/consultarCliente(), cadastrarPedidoLavagem(), registrarDevolucaoPedido()
+PEDIDO: numPedido, Obj.CLIENTE, Obj.AREA_LAVAGEM, Obj.LOJA, roupas[tipoRoupaLavados], quantidadeTipoRoupaLavagem[tipoRoupaLavagem], metodoLavagem, dataEncaminhamentoPedido, dataPrevistaEntrega, valorTotalPedido
+AREALAVAGEM: tiposRoupaLavados[string], precoTipoRoupa[double]
